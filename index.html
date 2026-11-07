@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0B0B0E">
+    <meta name="description" content="A birthday surprise made with love by AZR.">
+    <title>For you, with love — AZR</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <canvas class="particles" aria-hidden="true"></canvas>
+    <main class="experience">
+      <section class="scene scene--intro" id="intro" aria-labelledby="intro-title">
+        <div class="scene__content">
+          <p class="eyebrow">A little surprise, just for you</p>
+          <h1 class="visually-hidden" id="intro-title">Sebuah kejutan untukmu</h1>
+          <span class="intro-cue" aria-hidden="true">↓</span>
+          <button class="button button--primary intro-trigger" type="button" data-action="begin">
+            Pencet di sini
+          </button>
+        </div>
+      </section>
+
+      <section class="scene scene--magic" id="magic" aria-labelledby="magic-title" hidden>
+        <div class="scene__content">
+          <p class="eyebrow">There's something waiting</p>
+          <h2 class="scene__title" id="magic-title">A little magic for you</h2>
+          <button class="gift" type="button" data-action="unwrap" aria-label="Buka hadiah kejutan">
+            <span class="gift__lid" aria-hidden="true"></span>
+            <span class="gift__box" aria-hidden="true"></span>
+            <span class="gift__ribbon" aria-hidden="true"></span>
+          </button>
+          <p class="scene__hint">Tap to unwrap your surprise</p>
+        </div>
+      </section>
+
+      <section class="scene scene--celebration" id="celebration" aria-labelledby="birthday-title" hidden>
+        <div class="scene__content celebration">
+          <p class="eyebrow">Today is all about you</p>
+          <h2 class="celebration__title" id="birthday-title">HAPPY BIRTHDAY!</h2>
+          <p class="celebration__name" data-content="recipientName"></p>
+          <button class="portrait-button" type="button" data-action="show-greeting" aria-label="Buka ucapan ulang tahun">
+            <img class="portrait" data-image="portrait" alt="">
+            <span class="portrait-fallback" hidden>Tambahkan foto di js/config.js</span>
+          </button>
+          <p class="scene__hint">Tap your photo for a little message</p>
+        </div>
+      </section>
+
+      <section class="scene scene--greeting" id="greeting" aria-labelledby="greeting-title" hidden>
+        <article class="greeting-panel">
+          <div class="greeting-panel__media">
+            <img class="greeting-panel__portrait" data-image="greetingPortrait" alt="">
+            <span class="portrait-fallback greeting-panel__fallback" hidden>Tambahkan foto di js/config.js</span>
+          </div>
+          <div class="greeting-panel__copy">
+            <p class="eyebrow">A note from my brain</p>
+            <h2 id="greeting-title" data-content="greeting.title"></h2>
+            <p class="greeting-panel__message" data-content="greeting.message"></p>
+            <p class="signature">By: <span data-content="senderName"></span></p>
+            <div class="button-row">
+              <button class="button button--secondary" type="button" data-action="close-greeting">Tutup</button>
+              <button class="button button--primary" type="button" data-action="open-letter">Lanjutkan</button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="scene scene--letter" id="letter" aria-labelledby="letter-title" hidden>
+        <article class="letter">
+          <p class="eyebrow">A letter for your new year</p>
+          <h2 class="letter__title" id="letter-title" tabindex="-1">For you, always</h2>
+          <div class="letter__body">
+            <section class="letter__section" data-reveal>
+              <h3><span class="letter__number"></span>You've made it this far.</h3>
+              <p data-content="letter.appreciation"></p>
+            </section>
+            <section class="letter__section" data-reveal>
+              <h3><span class="letter__number"></span>You are stronger than you think.</h3>
+              <p data-content="letter.validation"></p>
+            </section>
+            <section class="letter__section" data-reveal>
+              <h3><span class="letter__number"></span>Build your own future.</h3>
+              <p data-content="letter.motivation"></p>
+            </section>
+            <section class="letter__section" data-reveal>
+              <h3><span class="letter__number"></span>Birthday wishes</h3>
+              <p data-content="letter.wishes"></p>
+            </section>
+          </div>
+          <footer class="letter__signoff">
+            <p>With best wishes,</p>
+            <p class="signature" data-content="senderName"></p>
+          </footer>
+        </article>
+      </section>
+    </main>
+
+    <button class="audio-toggle" type="button" data-action="toggle-audio" aria-label="Putar musik" aria-pressed="false" hidden>
+      <span aria-hidden="true">♫</span>
+    </button>
+    <p class="sr-status" aria-live="polite" aria-atomic="true"></p>
+    <p class="audio-status" role="status" hidden></p>
+  </body>
+</html>
